@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorator="template">
+<link rel="stylesheet" type="text/css"
+href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des Romans</title>
+</head>
+<body>
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+ <div class="card-header">
+ Modifier des Romans
+ </div>
+ <div class="card-body">
+<form th:action="@{saveRoman}" method="post">
+<div class="form-group">
+<label class="control-label" hidden>ID Roman :</label>
+ <input type="hidden" name="idRoman" class="form-control"
+th:value="${roman.idRoman}" />
+</div>
+<div class="form-group">
+<label class="control-label">Titre Roman :</label>
+<input type="text" name="titreRoman" class="form-control"
+th:value="${roman.titreRoman}" />
+<span th:errors= ${roman.titreRoman} class="text-danger">
+</span>
+</div>
+<div class="form-group">
+<label class="control-label">Prix Roman :</label>
+ <input type="text" name="prixRoman" class="form-control"
+th:value="${roman.prixRoman}" />
+ <span th:errors=${roman.prixRoman} class="text-danger">
+</span>
+</div>
+<div class="form-group">
+<label class="control-label">annee Edition :</label>
+<input type="date" name="anneeEdition" class="form-control"
+th:value="${roman.anneeEdition}"/>
+<span th:errors=${roman.anneeEdition} class="text-danger">
+</span>
+</div>
+<div>
+<button type="submit" class="btn btn-primary">Valider</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

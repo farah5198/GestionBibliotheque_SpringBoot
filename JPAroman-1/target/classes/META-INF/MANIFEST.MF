@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 14
+Implementation-Title: JPAroman-1
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: src.main.java.com.isetN.romans.JpAroman1Application.java
+Created-By: Maven Integration for Eclipse
+
